@@ -1,0 +1,34 @@
+{
+    "application": {
+        "id": "",
+        "title": "zhyi0010",
+        "type": "SAP_UI5_Component",
+        "componentUrl": "/",
+        "appUrl": "#zhyi0010-Display",
+        "navigationComponentName": "zhyi0010",
+        "intentSemanticObject": "zhyi0010",
+        "intentAction": "Display",
+        "html5ApplicationName": "zhyi0010",
+        "HCPParentApplicationName": ""
+    },
+    "assignment": {
+        "groups": [
+            "5403314d-9db4-4142-860a-603815e4318d"
+        ],
+        "contentPackages": [
+            "24181ae7-795e-4d80-89dd-5ac88e305b83"
+        ],
+        "categories": []
+    },
+    "tile": {
+        "type": "StaticTile",
+        "title": "Title",
+        "subtitle": "Subtitle",
+        "searchKeywords": "Title,Subtitle",
+        "displayIconUrl": "sap-icon://approvals",
+        "displayInfoText": "",
+        "size": "1x1",
+        "serviceURL": "",
+        "refreshInterval": ""
+    }
+}
