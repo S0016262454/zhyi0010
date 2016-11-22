@@ -18,7 +18,12 @@ sap.ui.define([
 	//ローカルストレージデータ取得
 	localStorageGetItem : function(key) {
 		// 検索用ワード配列
-		var historyObj = JSON.parse(localStorage.getItem(key));
+  jQuery.sap.require("jquery.sap.storage");
+  var oStorage = jQuery.sap.storage(jQuery.sap.storage.Type.local);
+
+  //Check if there is data into the Storage
+
+		var historyObj = JSON.parse(oStorage.get(key));
 		var historyArray = [];        // 取得したオブジェクトを補完する配列
 		var filterHistoryArray = [];  // 取得したオブジェクトを整形した配列
 		// オブジェクトを配列に変換 (スペースだけのものを弾く)
@@ -44,7 +49,12 @@ sap.ui.define([
 	//ローカルストレージデータ保管
 	localStorageSetItem : function(key, val) {
 		if (!key || !val) return; // キー項目もしくは値がなければ、何も処理しない。
-			var historyObj = JSON.parse(localStorage.getItem(key));
+  jQuery.sap.require("jquery.sap.storage");
+  var oStorage = jQuery.sap.storage(jQuery.sap.storage.Type.local);
+
+  //Check if there is data into the Storage
+
+			var historyObj = JSON.parse(oStorage.get(key));
 			if (historyObj === null) {
 				historyObj = JSON.stringify({});
 				historyObj = JSON.parse(historyObj);
@@ -78,7 +88,7 @@ sap.ui.define([
 				return self.indexOf(x) === i;
 			});
 		}
-		localStorage.setItem(key, JSON.stringify(filterHistoryArray));
+		oStorage.put(key, JSON.stringify(filterHistoryArray));
 		}
 	};
 });

@@ -34,9 +34,11 @@ sap.ui.define([
             jQuery.sap.log.error("●●●●●●●●●●●●●●●●●●●●●●●●カンマ付与●●●●●●●●●●●●●●●●●●●●●●●●：" + utils0010.getCommaFormat("123123123123123"));
             jQuery.sap.log.error("●●●●●●●●●●●●●●●●●●●●●●●●数値変換●●●●●●●●●●●●●●●●●●●●●●●●：" + utils0010.getToNum("123４５６"));
             jQuery.sap.log.error("●●●●●●●●●●●●●●●●●●●●●●●●半角数値チェック●●●●●●●●●●●●●●●●●●●●●●●●：" + utils0010.isNumeric("123"));
+            jQuery.sap.log.error("●●●●●●●●●●●●●●●●●●●●●●●●localStorageSetItem●●●●●●●●●●●●●●●●●●●●●●●●：" + utils0050.localStorageSetItem("AAA","6"));
+            jQuery.sap.log.error("●●●●●●●●●●●●●●●●●●●●●●●●localStorageGetItem●●●●●●●●●●●●●●●●●●●●●●●●：" + utils0050.localStorageGetItem("AAA"));
             jQuery.sap.log.error("●●●●●●●●●●●●●●●●●●●●●●●●桁数取得●●●●●●●●●●●●●●●●●●●●●●●●：" + utils0060.getLength("これは10！"));
             jQuery.sap.log.error("●●●●●●●●●●●●●●●●●●●●●●●●指定桁数埋め●●●●●●●●●●●●●●●●●●●●●●●●：" + utils0060.convertTrimPadding("AAA",5));
-            jQuery.sap.log.error("●●●●●●●●●●●●●●●●●●●●●●●●あああ●●●●●●●●●●●●●●●●●●●●●●●●：" + utils0060.editLenB("1234567890",5));
+//            jQuery.sap.log.error("●●●●●●●●●●●●●●●●●●●●●●●●あああ●●●●●●●●●●●●●●●●●●●●●●●●：" + utils0060.editLenB("1234567890",5));
         }
 	});
 });
