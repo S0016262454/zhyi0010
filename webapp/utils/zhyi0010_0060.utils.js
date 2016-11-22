@@ -46,31 +46,6 @@ sap.ui.define([
 				value += '&nbsp;';
 			}
 			return value;
-		},
-		
-	/*
-	 * あああああ
-	 * 指定文字数に編集
-	 */
-		editLenB : function(elm,digit) {
-			var i;
-			var cnt = 0;
-			var str = $(elm).val();
-			var edit = '';
-			for(i = 0; i < str.length; i++) {
-				if(escape(str.charAt(i)).length < 4){
-					cnt++;
-				}else{
-					cnt += 2;
-				}
-				if(digit < cnt){
-					$(elm).val(edit);
-					return null;
-				}else{
-					edit = edit + str.charAt(i);
-				}
-			}
-			return null;
 		}
 	};
 });

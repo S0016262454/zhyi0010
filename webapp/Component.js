@@ -5,10 +5,12 @@ sap.ui.define([
 	"zhyi0010/model/zhyi0010_0010.model",
 
 	"zhyi0010/utils/zhyi0010_0010.utils",
+	"zhyi0010/utils/zhyi0010_0030.utils",
 	"zhyi0010/utils/zhyi0010_0040.utils",
 	"zhyi0010/utils/zhyi0010_0050.utils",
 	"zhyi0010/utils/zhyi0010_0060.utils"
-], function(UIComponent, Device, commons, models, utils0010, utils0040, utils0050, utils0060) {
+], function(UIComponent, Device, commons, models, utils0010, utils0030, utils0040, utils0050, utils0060) {
+
 	"use strict";
 
 	return UIComponent.extend("zhyi0010.Component", {
@@ -34,9 +36,13 @@ sap.ui.define([
             jQuery.sap.log.error("●●●●●●●●●●●●●●●●●●●●●●●●カンマ付与●●●●●●●●●●●●●●●●●●●●●●●●：" + utils0010.getCommaFormat("123123123123123"));
             jQuery.sap.log.error("●●●●●●●●●●●●●●●●●●●●●●●●数値変換●●●●●●●●●●●●●●●●●●●●●●●●：" + utils0010.getToNum("123４５６"));
             jQuery.sap.log.error("●●●●●●●●●●●●●●●●●●●●●●●●半角数値チェック●●●●●●●●●●●●●●●●●●●●●●●●：" + utils0010.isNumeric("123"));
-            jQuery.sap.log.error("●●●●●●●●●●●●●●●●●●●●●●●●桁数取得●●●●●●●●●●●●●●●●●●●●●●●●：" + utils0060.getLength("これは10！"));
+            jQuery.sap.log.error("●●●●●●●●●●●●●●●●●●●●●●●●桁数取得●●●●●●●●●●●●●●●●●●●●●●●●：" + utils0060.getLength("１1234567890"));
             jQuery.sap.log.error("●●●●●●●●●●●●●●●●●●●●●●●●指定桁数埋め●●●●●●●●●●●●●●●●●●●●●●●●：" + utils0060.convertTrimPadding("AAA",5));
-            jQuery.sap.log.error("●●●●●●●●●●●●●●●●●●●●●●●●あああ●●●●●●●●●●●●●●●●●●●●●●●●：" + utils0060.editLenB("1234567890",5));
+//ボツ            jQuery.sap.log.error("●●●●●●●●●●●●●●●●●●●●●●●●あああ●●●●●●●●●●●●●●●●●●●●●●●●：" + utils0060.editLenB("1234567890",5));
+			jQuery.sap.log.error("●●●●●●●●●●●●●●●●●●●●●●●●乗算　10*5=●●●●●●●●●●●●●●●●●●●●●●●●：" + utils0030.multiply(10,5));
+			jQuery.sap.log.error("●●●●●●●●●●●●●●●●●●●●●●●●除算　10/5=●●●●●●●●●●●●●●●●●●●●●●●●：" + utils0030.divide(10,5));
+			jQuery.sap.log.error("●●●●●●●●●●●●●●●●●●●●●●●●加算　10+5=●●●●●●●●●●●●●●●●●●●●●●●●：" + utils0030.add(10,5));
+			jQuery.sap.log.error("●●●●●●●●●●●●●●●●●●●●●●●●減算　10-5=●●●●●●●●●●●●●●●●●●●●●●●●：" + utils0030.subtract(10,5));
         }
 	});
 });
