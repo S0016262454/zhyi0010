@@ -46,7 +46,43 @@ sap.ui.define([
 				value += '&nbsp;';
 			}
 			return value;
+		},
+		
+	/*
+	 * 8桁の数値をyyyy/mm/dd形式に変換
+	 * ex)20161122 → 2016/11/22 
+	 */
+		dateFormat : function(val) {
+			if (val && val.length == 8){
+				return val.substring(0, 4) + '/' + val.substring(4, 6) + '/' + val.substring(6, 8);
+			}
+			return val;
+			},
+
+	/*
+	 * hh:mm or hh:mm:ss形式に変換
+	 * ex1)1010 → 10:00
+	 * ex2)101010 → 10:10:10
+	 */
+		timeFormat : function(val) {
+			if (val && val.length == 6){
+				return val.substring(0, 2) + ':' + val.substring(2, 4) + ':' + val.substring(4, 6);
+			}
+			if (val && val.length == 4){
+				return val.substring(0, 2) + ':' + val.substring(2, 4);
+			}
+			return val;
+		},
+
+	/*
+	 * 郵便番号形式に変換
+	 * ex)1234567 → 123-4567
+	 */
+		postCodeFormat : function(val) {
+			if (val && val.length == 7){
+				return val.substring(0, 3) + '-' + val.substring(3, 7);
+			}
+			return val;
 		}
 	};
 });
-    

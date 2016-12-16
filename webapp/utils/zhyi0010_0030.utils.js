@@ -47,7 +47,10 @@ sap.ui.define([
 			var arr = this.getMathNum(value1, value2);
 			return (arr[0] - arr[1]) / arr[2];
 		},
-
+		
+	/*
+     * 数値変換
+     */ 
 		getMathNum : function(value1, value2) {
 			var ret = [String(value1), String(value2), '1'];
 			var len1 = 0, len2 = 0, loopCnt = 0;
@@ -110,6 +113,9 @@ sap.ui.define([
 			return ret;
 		},
 		
+	/*
+     * ゼロシフト
+     */ 
 		zeroShift : function(val) {
 			if (!val){
 				return val;
@@ -132,6 +138,47 @@ sap.ui.define([
 					result =  val;
 				}
 				return  utils0010.getCommaFormat(result);
+		},
+	/*
+	 * 小数点n位までを残す関数
+	 * @param number 対象の数値
+	 * @param n 残したい小数点以下の桁数
+	 * @param type 'round':四捨五入,'floor':切り捨て,'ceil':切り上げ
+	 * @returns 換算後の数値
+	 */
+		mathFloat : function(number, n, type) {
+			var _pow = Math.pow( 10 , n );
+
+		  switch (type) {
+			case 'round':
+				return Math.round( number * _pow ) / _pow ;
+			case 'floor':
+				return Math.floor( number * _pow ) / _pow ;
+			case 'ceil':
+				return Math.ceil ( number * _pow ) / _pow ;
+			default:
+			return number;
+		  }
+		},
+		
+	/*
+     * num * scale / scale
+     * 切り捨てver.
+     */ 
+		floor_scale : function(num,scale){
+			num = Number(num);
+			num = this.divide( Math.floor( this.multiply( num, scale )), scale );
+			return num;
+		},
+		
+	/*
+     * num * scale / scale
+     * 四捨五入ver.
+     */ 
+		round_scale : function(num,scale){
+			num = Number(num);
+			num = this.divide( Math.round( this.multiply( num, scale )), scale );
+			return num;
 		}
 	};
 });
