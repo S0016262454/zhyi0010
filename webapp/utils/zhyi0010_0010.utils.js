@@ -1,3 +1,9 @@
+/**
+ * zhyi0010_0010.utils.js
+ * IPS共通JSライブラリ0010：書式変換系のJSライブラリ群
+ * 
+ * @namespace 
+ */
 sap.ui.define([
 	"sap/ui/model/json/JSONModel",
 	"sap/ui/Device"
@@ -97,7 +103,7 @@ sap.ui.define([
 			var under = '';
 			if (numvalue.length > 1) {
 				var numsplit = numvalue[1].split('0');
-				for (var i = numsplit.length; i-- > 0; ) {
+				for (var i = numsplit.length; i-- > 0;) {
 					if (under.length > 0) {
 						under = '0' + under;
 					}
@@ -112,37 +118,37 @@ sap.ui.define([
 			}
 			return upper + under;
 		},
-		
-	/* 
-	 * 入力文字列を指定した項目長の文字列にして返す、defaultで左寄せ
-	 * @param str 入力文字列
-	 * @param len 入力項目長
-	 * @param right  true：右寄せ指定／false：左寄せ指定
-	 * @return 指定した項目長の文字列
-	 */
-		makeText : function(str,len,right){
+
+		/* 
+		 * 入力文字列を指定した項目長の文字列にして返す、defaultで左寄せ
+		 * @param str 入力文字列
+		 * @param len 入力項目長
+		 * @param right  true：右寄せ指定／false：左寄せ指定
+		 * @return 指定した項目長の文字列
+		 */
+		makeText: function(str, len, right) {
 			var ret = str;
 			var padding = '';
 			len -= str.length;
-			if( ret.length > len ){
-				ret = ret.substring(0,len);
+			if (ret.length > len) {
+				ret = ret.substring(0, len);
 			}
-			for(var i = -1; ++i < len; ){
+			for (var i = -1; ++i < len;) {
 				padding = padding + '&nbsp;';
 			}
-			if( right ){
+			if (right) {
 				ret = padding + ret;
-			}else{
+			} else {
 				ret = ret + padding;
 			}
 			return ret;
 		},
-		
-	/*
-	 * 簡単な説明文？
-	 */
-		addSlash : function(str){
-			if( str != undefined && str != null && str != '' ){
+
+		/*
+		 * 簡単な説明文？
+		 */
+		addSlash: function(str) {
+			if (str != undefined && str != null && str != '') {
 				str = str + '/';
 			}
 			return str;
